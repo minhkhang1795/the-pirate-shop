@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -12,7 +12,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'mdbreact';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class NavbarFeatures extends React.Component {
   constructor(props) {

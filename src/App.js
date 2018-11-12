@@ -2,12 +2,8 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import React, {Component} from 'react';
-import {
-  Container,
-  Row,
-} from 'mdbreact';
 import './App.css';
-import {Route, Switch, Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import NavBar from './NavBar'
 import ModelPage from './ModelPage'
 import * as DBHelper from './DBhelper'
@@ -15,7 +11,6 @@ import ShopComponent from "./ShopComponent";
 import CartComponent from "./CartComponent";
 import SignInComponent from "./SignInComponent";
 import SignUpComponent from "./SignUpComponent";
-import VideoCard from "./VideoCard";
 
 class App extends Component {
 

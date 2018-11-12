@@ -1,6 +1,18 @@
-import React, { Component } from 'react';
-import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarNav,
+  NavbarToggler,
+  Collapse,
+  NavItem,
+  NavLink,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
+} from 'mdbreact';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 class NavbarFeatures extends React.Component {
   constructor(props) {
@@ -12,11 +24,12 @@ class NavbarFeatures extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick(){
+  onClick() {
     this.setState({
       collapse: !this.state.collapse,
     });
   }
+
   render() {
     return (
       <Router>
@@ -24,30 +37,40 @@ class NavbarFeatures extends React.Component {
           <NavbarBrand href="/">
             <strong>The Pirate Shop</strong>
           </NavbarBrand>
-          { !this.state.isWideEnough && <NavbarToggler onClick = { this.onClick } />}
-          <Collapse isOpen = { this.state.collapse } navbar>
+          {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick}/>}
+
+          <Collapse isOpen={this.state.collapse} navbar>
+
             <NavbarNav right>
-              <NavItem active>
-                <NavLink to="#">Shop</NavLink>
+              <NavItem active={this.props.currentItem === 'shop'} onClick={() => this.props.updateItem('shop')}>
+                <NavLink to="/">Shop</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink to="#">Cart</NavLink>
+
+              <NavItem active={this.props.currentItem === 'cart'} onClick={() => this.props.updateItem('cart')}>
+                <NavLink to="/cart">Cart</NavLink>
               </NavItem>
+
               <NavItem>
                 <Dropdown>
                   <DropdownToggle nav caret>Account</DropdownToggle>
                   <DropdownMenu>
-                    <DropdownItem href="#">Sign In</DropdownItem>
-                    <DropdownItem href="#">Create an Account</DropdownItem>
+                    <Link className="my-dropdown" to="/sign-in" onClick={() => this.props.updateItem('signin')}>
+                      <DropdownItem active={this.props.currentItem === 'signin'}>
+                        Sign In</DropdownItem></Link>
+                    <Link className="my-dropdown" to="/sign-up" onClick={() => this.props.updateItem('signup')}>
+                      <DropdownItem active={this.props.currentItem === 'signup'}>
+                        Create an Account</DropdownItem></Link>
                   </DropdownMenu>
                 </Dropdown>
               </NavItem>
             </NavbarNav>
+
           </Collapse>
         </Navbar>
       </Router>
     );
   }
+
 }
 
 export default NavbarFeatures

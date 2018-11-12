@@ -38,3 +38,8 @@
 .card img {
   max-height: 400px;
 }
+
+.my-dropdown {
+  padding: 0!important;
+  width: 100%;
+}

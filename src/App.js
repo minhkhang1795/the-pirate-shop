@@ -7,16 +7,21 @@ import {
   Row,
 } from 'mdbreact';
 import './App.css';
+import { Route } from 'react-router-dom'
 import VideoCard from './VideoCard'
 import NavBar from './NavBar'
 import ModelPage from './ModelPage'
 import * as DBHelper from './DBhelper'
+import ShopComponent from "./ShopComponent";
+import CartComponent from "./CartComponent";
 
 class App extends Component {
 
   state = {
     videos: [],
-    showFavNoti: false
+    cartItems: [],
+    showFavNoti: false,
+    navItem: 'shop'
   };
 
   componentDidMount() {
@@ -46,27 +51,29 @@ class App extends Component {
     this.setState({showFavNoti: false})
   }
 
+  updateItem(item) {
+    this.setState({navItem: item})
+  }
+
   render() {
-    const {videos, showFavNoti} = this.state;
+    const {videos, cartItems, showFavNoti, navItem} = this.state;
     return (
       <div>
+        <NavBar currentItem={navItem} updateItem={(item) => this.updateItem(item)}/>
+        <Route exact path='/' render={() => (
+          <ShopComponent
+            videos={videos}
+          />
+        )}/>
+        <Route exact path='/cart' render={() => (
+          <CartComponent
+            items={cartItems}
+          />
+        )}/>
+        
+
         {showFavNoti && <ModelPage isShown={showFavNoti} onClose={() => this.onCloseFavNotiModal()}/>}
-        <Container>
-          <NavBar/>
-          <section className="text-center my-5 py-5">
-            <h2 className="h1-responsive font-weight-bold text-center my-3">The Pirate Shop</h2>
-            <p className="grey-text text-center w-responsive mx-auto mb-3">Unlimited Edition for Star Wars fans</p>
-            <Row>
-              {videos && videos.constructor === Array && videos.map((video) =>
-                <VideoCard key={video.id}
-                           video={video}
-                           onCartClick={() => this.onCartClick()}
-                           onFavClick={() => this.onFavClick()}
-                />
-              )}
-            </Row>
-          </section>
-        </Container>
+
       </div>
     );
   }

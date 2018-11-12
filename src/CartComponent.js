@@ -15,7 +15,7 @@ class CartComponent extends React.Component {
             {videos && videos.constructor === Array && videos.map((video) =>
               <VideoCard key={video.id}
                          video={video}
-                         onCartClick={() => this.onCartClick()}
+                         onCartClick={(video) => this.onCartClick(video)}
                          onFavClick={() => this.onFavClick()}
               />
             )}

@@ -17,7 +17,7 @@ class App extends Component {
 
   state = {
     videos: [],
-    cartItems: [],
+    cartItems: {},
     currentItem: null,
     showFavNoti: false,
     navItem: 'shop'
@@ -39,29 +39,42 @@ class App extends Component {
   }
 
   onCartClick(item) {
-    console.log(item)
-    this.setState({currentItem: item})
+    let currentItem = item.id in this.state.cartItems ? this.state.cartItems[item.id] : item;
+    this.setState({currentItem: currentItem});
   }
 
   onCloseCartModal() {
-    this.setState({currentItem: null})
+    this.setState({currentItem: null});
   }
 
 
   onFavClick() {
-    this.setState({showFavNoti: true})
+    this.setState({showFavNoti: true});
   }
 
   onCloseFavNotiModal() {
-    this.setState({showFavNoti: false})
+    this.setState({showFavNoti: false});
   }
 
-  onCartUpdate(quantity) {
-    console.log(quantity)
+  onCartUpdate(item, quantity) {
+    let cartItems = this.state.cartItems;
+    let id = item.id;
+    if (quantity === 0) {
+      cartItems[id].quantity = 0;
+      delete cartItems[item.id];
+    } else {
+      if (id in cartItems) {
+        cartItems[id].quantity = quantity;
+      } else {
+        item.quantity = quantity;
+        cartItems[item.id] = item;
+      }
+    }
+    this.setState({cartItems: cartItems, currentItem: null});
   }
 
   updateNavItem(item) {
-    this.setState({navItem: item})
+    this.setState({navItem: item});
   }
 
   render() {
@@ -70,7 +83,7 @@ class App extends Component {
       <div>
         <NavBar activeItem={navItem} updateNavItem={(item) => this.updateNavItem(item)}/>
         {currentItem && <CartModalPage item={currentItem} onClose={() => this.onCloseCartModal()}
-                                       onCartUpdate={(quantity) => this.onCartUpdate(quantity)}/>}
+                                       onCartUpdate={(item, quantity) => this.onCartUpdate(item, quantity)}/>}
         {showFavNoti && <FavModalPage onClose={() => this.onCloseFavNotiModal()}/>}
         <Route exact path='/' render={() => (
           <ShopComponent videos={videos}

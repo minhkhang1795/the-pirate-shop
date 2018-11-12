@@ -8,7 +8,7 @@ class FavModalPage extends React.Component {
     return (
       <Container>
         <Modal isOpen={true}>
-          <ModalHeader toggle={this.toggle} size="md">Add to Favorites</ModalHeader>
+          <ModalHeader size="md">Add to Favorites</ModalHeader>
           <ModalBody>
             Please sign in to add items to your favorite list. However, account related features are still under
             construction!

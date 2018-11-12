@@ -7,13 +7,14 @@ import {
   Row,
 } from 'mdbreact';
 import './App.css';
-import { Route } from 'react-router-dom'
-import VideoCard from './VideoCard'
+import {Route, Switch, Link} from 'react-router-dom'
 import NavBar from './NavBar'
 import ModelPage from './ModelPage'
 import * as DBHelper from './DBhelper'
 import ShopComponent from "./ShopComponent";
 import CartComponent from "./CartComponent";
+import SignInComponent from "./SignInComponent";
+import SignUpComponent from "./SignUpComponent";
 
 class App extends Component {
 
@@ -60,20 +61,20 @@ class App extends Component {
     return (
       <div>
         <NavBar currentItem={navItem} updateItem={(item) => this.updateItem(item)}/>
-        <Route exact path='/' render={() => (
-          <ShopComponent
-            videos={videos}
-          />
-        )}/>
-        <Route exact path='/cart' render={() => (
-          <CartComponent
-            items={cartItems}
-          />
-        )}/>
-        
-
         {showFavNoti && <ModelPage isShown={showFavNoti} onClose={() => this.onCloseFavNotiModal()}/>}
-
+          <Route exact path='/' render={() => (
+            <ShopComponent videos={videos}/>
+          )}/>
+          <Route path='/cart' render={() => (
+            <CartComponent
+              items={cartItems}/>
+          )}/>
+          <Route path='/sign-in' render={() => (
+            <SignInComponent/>
+          )}/>
+          <Route path='/sign-up' render={() => (
+            <SignUpComponent/>
+          )}/>
       </div>
     );
   }

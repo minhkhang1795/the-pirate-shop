@@ -15,6 +15,7 @@ import ShopComponent from "./ShopComponent";
 import CartComponent from "./CartComponent";
 import SignInComponent from "./SignInComponent";
 import SignUpComponent from "./SignUpComponent";
+import VideoCard from "./VideoCard";
 
 class App extends Component {
 
@@ -63,7 +64,9 @@ class App extends Component {
         <NavBar currentItem={navItem} updateItem={(item) => this.updateItem(item)}/>
         {showFavNoti && <ModelPage isShown={showFavNoti} onClose={() => this.onCloseFavNotiModal()}/>}
           <Route exact path='/' render={() => (
-            <ShopComponent videos={videos}/>
+            <ShopComponent videos={videos}
+                           onCartClick={() => this.onCartClick()}
+                           onFavClick={() => this.onFavClick()}/>
           )}/>
           <Route path='/cart' render={() => (
             <CartComponent

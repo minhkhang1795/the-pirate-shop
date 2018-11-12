@@ -16,8 +16,8 @@ class ShopComponent extends React.Component {
             {videos && videos.constructor === Array && videos.map((video) =>
               <VideoCard key={video.id}
                          video={video}
-                         onCartClick={() => this.onCartClick()}
-                         onFavClick={() => this.onFavClick()}
+                         onCartClick={() => this.props.onCartClick()}
+                         onFavClick={() => this.props.onFavClick()}
               />
             )}
           </Row>

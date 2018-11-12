@@ -9,12 +9,14 @@ import {
 import './App.css';
 import VideoCard from './VideoCard'
 import NavBar from './NavBar'
+import ModelPage from './ModelPage'
 import * as DBHelper from './DBhelper'
 
 class App extends Component {
 
   state = {
-    videos: []
+    videos: [],
+    showFavNoti: false
   };
 
   componentDidMount() {
@@ -32,10 +34,23 @@ class App extends Component {
     })
   }
 
+  onCartClick() {
+
+  }
+
+  onFavClick() {
+    this.setState({showFavNoti: true})
+  }
+
+  onCloseFavNotiModal() {
+    this.setState({showFavNoti: false})
+  }
+
   render() {
-    const {videos} = this.state;
+    const {videos, showFavNoti} = this.state;
     return (
       <div>
+        {showFavNoti && <ModelPage isShown={showFavNoti} onClose={() => this.onCloseFavNotiModal()}/>}
         <Container>
           <NavBar/>
           <section className="text-center my-5 py-5">
@@ -43,7 +58,11 @@ class App extends Component {
             <p className="grey-text text-center w-responsive mx-auto mb-3">Unlimited Edition for Star Wars fans</p>
             <Row>
               {videos && videos.constructor === Array && videos.map((video) =>
-                <VideoCard key={video.id} video={video}/>
+                <VideoCard key={video.id}
+                           video={video}
+                           onCartClick={() => this.onCartClick()}
+                           onFavClick={() => this.onFavClick()}
+                />
               )}
             </Row>
           </section>

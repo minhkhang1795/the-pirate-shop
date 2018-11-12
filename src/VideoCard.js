@@ -23,11 +23,13 @@ class VideoCard extends Component {
                       <strong>${video.price}</strong>
                     </span>
               <span className="float-right">
-                      <Tooltip placement="top" tag="a" component="i" componentClass="fa fa-shopping-cart grey-text ml-3"
-                               tooltipContent="Add to Cart"/>
-                      <Tooltip placement="top" tag="a" component="i" componentClass="fa fa-heart grey-text ml-3"
-                               tooltipContent="Add to Watchlist"/>
-                    </span>
+                      <a onClick={() => this.props.onCartClick()}><Tooltip placement="top" tag="a" component="i"
+                                                                   componentClass="fa fa-shopping-cart grey-text ml-3"
+                                                                   tooltipContent="Add to Cart"/></a>
+                      <a onClick={() => this.props.onFavClick()}><Tooltip placement="top" tag="a" component="i"
+                                                            componentClass="fa fa-heart grey-text ml-3"
+                                                            tooltipContent="Add to Watchlist"/></a>
+              </span>
             </CardFooter>
           </CardBody>
         </Card>

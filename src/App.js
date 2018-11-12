@@ -5,20 +5,10 @@ import React, {Component} from 'react';
 import {
   Container,
   Row,
-  Col,
-  Card,
-  CardImage,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardFooter,
-  Fa,
-  Tooltip,
-  Badge,
-  Button
 } from 'mdbreact';
 import './App.css';
 import VideoCard from './VideoCard'
+import NavBar from './NavBar'
 import * as DBHelper from './DBhelper'
 
 class App extends Component {
@@ -45,17 +35,20 @@ class App extends Component {
   render() {
     const {videos} = this.state;
     return (
-      <Container>
-        <section className="text-center my-5">
-          <h2 className="h1-responsive font-weight-bold text-center my-5">The Pirate Shop</h2>
-          <p className="grey-text text-center w-responsive mx-auto mb-5">Unlimited Edition for Star Wars fans</p>
-          <Row>
-            {videos && videos.constructor === Array && videos.map((video) =>
-              <VideoCard key={video.id} video={video}/>
-            )}
-          </Row>
-        </section>
-      </Container>
+      <div>
+        <Container>
+          <NavBar/>
+          <section className="text-center my-5 py-5">
+            <h2 className="h1-responsive font-weight-bold text-center my-3">The Pirate Shop</h2>
+            <p className="grey-text text-center w-responsive mx-auto mb-3">Unlimited Edition for Star Wars fans</p>
+            <Row>
+              {videos && videos.constructor === Array && videos.map((video) =>
+                <VideoCard key={video.id} video={video}/>
+              )}
+            </Row>
+          </section>
+        </Container>
+      </div>
     );
   }
 }

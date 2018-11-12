@@ -24,7 +24,7 @@ class VideoCard extends Component {
               </span>
               <span className="float-right">
                 <Badge color={video.cdType === 'DVD' ? "green" : "orange"} pill>{video.cdType}</Badge>{'    '}
-                <a onClick={() => this.props.onCartClick()}><Tooltip placement="top" tag="a" component="i"
+                <a onClick={(video) => this.props.onCartClick(video)}><Tooltip placement="top" tag="a" component="i"
                                                                      componentClass="fa fa-shopping-cart grey-text ml-3"
                                                                      tooltipContent="Add to Cart"/></a>
                 <a onClick={() => this.props.onFavClick()}><Tooltip placement="top" tag="a" component="i"

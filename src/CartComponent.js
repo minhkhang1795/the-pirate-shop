@@ -10,8 +10,7 @@ class CartComponent extends React.Component {
     return (
       <Container>
         <section className="text-center my-5 py-5">
-          <h2 className="h1-responsive font-weight-bold text-center my-3">The Pirate Shop</h2>
-          <p className="grey-text text-center w-responsive mx-auto mb-3">Unlimited Edition for Star Wars fans</p>
+          <h2 className="h1-responsive font-weight-bold text-center my-3">Your Cart</h2>
           <Row>
             {videos && videos.constructor === Array && videos.map((video) =>
               <VideoCard key={video.id}

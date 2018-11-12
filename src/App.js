@@ -5,7 +5,8 @@ import React, {Component} from 'react';
 import './App.css';
 import {Route} from 'react-router-dom'
 import NavBar from './NavBar'
-import ModelPage from './ModelPage'
+import FavModalPage from './FavModalPage'
+import CartModalPage from './CartModalPage'
 import * as DBHelper from './DBhelper'
 import ShopComponent from "./ShopComponent";
 import CartComponent from "./CartComponent";
@@ -17,6 +18,7 @@ class App extends Component {
   state = {
     videos: [],
     cartItems: [],
+    currentItem: null,
     showFavNoti: false,
     navItem: 'shop'
   };
@@ -36,9 +38,15 @@ class App extends Component {
     })
   }
 
-  onCartClick() {
-
+  onCartClick(item) {
+    console.log(item)
+    this.setState({currentItem: item})
   }
+
+  onCloseCartModal() {
+    this.setState({currentItem: null})
+  }
+
 
   onFavClick() {
     this.setState({showFavNoti: true})
@@ -48,31 +56,37 @@ class App extends Component {
     this.setState({showFavNoti: false})
   }
 
-  updateItem(item) {
+  onCartUpdate(quantity) {
+    console.log(quantity)
+  }
+
+  updateNavItem(item) {
     this.setState({navItem: item})
   }
 
   render() {
-    const {videos, cartItems, showFavNoti, navItem} = this.state;
+    const {videos, cartItems, currentItem, showFavNoti, navItem} = this.state;
     return (
       <div>
-        <NavBar currentItem={navItem} updateItem={(item) => this.updateItem(item)}/>
-        {showFavNoti && <ModelPage isShown={showFavNoti} onClose={() => this.onCloseFavNotiModal()}/>}
-          <Route exact path='/' render={() => (
-            <ShopComponent videos={videos}
-                           onCartClick={() => this.onCartClick()}
-                           onFavClick={() => this.onFavClick()}/>
-          )}/>
-          <Route path='/cart' render={() => (
-            <CartComponent
-              items={cartItems}/>
-          )}/>
-          <Route path='/sign-in' render={() => (
-            <SignInComponent/>
-          )}/>
-          <Route path='/sign-up' render={() => (
-            <SignUpComponent/>
-          )}/>
+        <NavBar activeItem={navItem} updateNavItem={(item) => this.updateNavItem(item)}/>
+        {currentItem && <CartModalPage item={currentItem} onClose={() => this.onCloseCartModal()}
+                                       onCartUpdate={(quantity) => this.onCartUpdate(quantity)}/>}
+        {showFavNoti && <FavModalPage onClose={() => this.onCloseFavNotiModal()}/>}
+        <Route exact path='/' render={() => (
+          <ShopComponent videos={videos}
+                         onCartClick={(item) => this.onCartClick(item)}
+                         onFavClick={() => this.onFavClick()}/>
+        )}/>
+        <Route path='/cart' render={() => (
+          <CartComponent
+            items={cartItems}/>
+        )}/>
+        <Route path='/sign-in' render={() => (
+          <SignInComponent/>
+        )}/>
+        <Route path='/sign-up' render={() => (
+          <SignUpComponent/>
+        )}/>
       </div>
     );
   }

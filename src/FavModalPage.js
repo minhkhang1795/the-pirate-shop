@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Button, Modal, ModalBody, ModalHeader, ModalFooter } from 'mdbreact';
 
 
-class ModalPage extends React.Component {
+class FavModalPage extends React.Component {
 
   render() {
     return (
@@ -22,4 +22,4 @@ class ModalPage extends React.Component {
   }
 }
 
-export default ModalPage;
+export default FavModalPage;

@@ -48,3 +48,9 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.react-numeric-input {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 250px!important;
+}

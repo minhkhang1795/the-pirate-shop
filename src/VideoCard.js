@@ -11,12 +11,10 @@ class VideoCard extends Component {
         <Card wide>
           <CardImage cascade src={video.Poster} top alt={video.Title}/>
           <CardBody cascade className="text-center">
-            <a href="" className="text-muted">
-              <h5 color="unique-color-dark">{video.Title}</h5>
-            </a>
             <CardTitle>
-              <strong>{video.Director}</strong>
+              {video.Title}
             </CardTitle>
+            <h5 className="text-muted">{video.Director}</h5>
             <CardText>{video.Plot}</CardText>
             <CardFooter className="px-1">
               <span className="float-left font-weight-bold">

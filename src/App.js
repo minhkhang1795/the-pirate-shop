@@ -32,6 +32,10 @@ class App extends Component {
       if (videos) {
         console.log(videos);
         this.setState({videos: videos});
+        this.onCartUpdate(this.state.videos[0], 10);
+        this.onCartUpdate(this.state.videos[1], 10);
+        this.onCartUpdate(this.state.videos[2], 10);
+        this.onCartUpdate(this.state.videos[5], 5);
       }
     }).catch((e) => {
       console.log(e);
@@ -91,8 +95,7 @@ class App extends Component {
                          onFavClick={() => this.onFavClick()}/>
         )}/>
         <Route path='/cart' render={() => (
-          <CartComponent
-            items={cartItems}/>
+          <CartComponent items={cartItems}/>
         )}/>
         <Route path='/sign-in' render={() => (
           <SignInComponent/>

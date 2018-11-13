@@ -42,7 +42,7 @@ class NavbarFeatures extends React.Component {
         <Collapse isOpen={this.state.collapse} navbar>
 
           <NavbarNav right>
-            <NavItem active={activeItem === 'shop'} onClick={() => this.props.updateNavItem('shop')}>
+            <NavItem active={activeItem === ''} onClick={() => this.props.updateNavItem('')}>
               <NavLink to='/'>Shop</NavLink>
             </NavItem>
 
@@ -57,11 +57,11 @@ class NavbarFeatures extends React.Component {
               <Dropdown>
                 <DropdownToggle nav caret>Account</DropdownToggle>
                 <DropdownMenu>
-                  <Link className="my-dropdown" to='/sign-in' onClick={() => this.props.updateNavItem('signin')}>
-                    <DropdownItem active={activeItem === 'signin'}>
+                  <Link className="my-dropdown" to='/sign-in' onClick={() => this.props.updateNavItem('sign-in')}>
+                    <DropdownItem active={activeItem === 'sign-in'}>
                       Sign In</DropdownItem></Link>
-                  <Link className="my-dropdown" to='/sign-up' onClick={() => this.props.updateNavItem('signup')}>
-                    <DropdownItem active={activeItem === 'signup'}>
+                  <Link className="my-dropdown" to='/sign-up' onClick={() => this.props.updateNavItem('sign-up')}>
+                    <DropdownItem active={activeItem === 'sign-up'}>
                       Create an Account</DropdownItem></Link>
                 </DropdownMenu>
               </Dropdown>

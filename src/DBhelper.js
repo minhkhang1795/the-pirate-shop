@@ -17,19 +17,4 @@ const headers = {
 export const getAll = () =>
   fetch(`${api}/videos.json`, { headers })
     .then(res => res.json())
-    .then(data => data.videos)
-
-export const remove = (video) =>
-  fetch(`${api}/videos/${video.id}`, { method: 'DELETE', headers })
-    .then(res => res.json())
-    .then(data => data.video)
-
-export const create = (body) =>
-  fetch(`${api}/videos`, {
-    method: 'POST',
-    headers: {
-      ...headers,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  }).then(res => res.json())
+    .then(data => data.videos);

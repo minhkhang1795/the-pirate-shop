@@ -20,10 +20,8 @@ class CartComponent extends React.Component {
     let count = 0;
     if (items) {
       for (let key in items) {
-        if (items.hasOwnProperty(key)) {
-          if (items[key].cdType === cdType) {
-            count++;
-          }
+        if (items.hasOwnProperty(key) && items[key].cdType === cdType) {
+          count++;
         }
       }
     }
@@ -54,11 +52,7 @@ class CartComponent extends React.Component {
     if (items) {
       for (let key in items) {
         if (items.hasOwnProperty(key)) {
-          if (items[key].cdType === 'DVD') {
-            items[key].discount = dvdDiscount;
-          } else {
-            items[key].discount = brDiscount;
-          }
+          items[key].discount = items[key].cdType === 'DVD' ? dvdDiscount : brDiscount;
         }
       }
     }
@@ -66,8 +60,10 @@ class CartComponent extends React.Component {
 
   render() {
     const {items} = this.props;
+
     CartComponent.addDiscountsTo(items);
     let {discountApplied, total} = CartComponent.calculateTotal(items);
+
     return (
       <Container>
         <section className="text-center my-5 py-5">
@@ -122,9 +118,11 @@ class CartComponent extends React.Component {
             </tbody>
           </table>
           }
-          <Link to='/' onClick={() => this.props.updateNavItem('shop')}>
+
+          <Link to='/' onClick={() => this.props.updateNavItem('')}>
             <Button color="dark">Continue Shopping</Button>
           </Link>{' '}
+
           {items && !CartComponent.isEmpty(items) && <Button color="green">Check out</Button>}
         </section>
       </Container>

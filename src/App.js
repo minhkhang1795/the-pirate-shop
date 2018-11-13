@@ -21,7 +21,7 @@ class App extends Component {
     cartItems: {},
     currentItem: null,
     showFavNoti: false,
-    navItem: 'shop'
+    navItem: window.location.pathname.replace('/', '')
   };
 
   componentDidMount() {
@@ -33,10 +33,6 @@ class App extends Component {
       if (videos) {
         console.log(videos);
         this.setState({videos: videos});
-        // this.onCartUpdate(this.state.videos[0], 10);
-        // this.onCartUpdate(this.state.videos[1], 10);
-        // this.onCartUpdate(this.state.videos[2], 10);
-        // this.onCartUpdate(this.state.videos[5], 5);
       }
     }).catch((e) => {
       console.log(e);
@@ -98,30 +94,43 @@ class App extends Component {
     const {videos, cartItems, currentItem, showFavNoti, navItem} = this.state;
     return (
       <div>
+        {/* Navigation bar*/}
         <NavBar activeItem={navItem}
                 updateNavItem={(item) => this.updateNavItem(item)}
                 itemsCount={App.itemsCount(cartItems)}/>
-        {currentItem && <CartModalPage item={currentItem} onClose={() => this.onCloseCartModal()}
-                                       onCartUpdate={(item, quantity) => this.onCartUpdate(item, quantity)}/>}
-        {showFavNoti && <FavModalPage onClose={() => this.onCloseFavNotiModal()}/>}
+
+        {/* Main shopping page */}
         <Route exact path='/' render={() => (
           <ShopComponent videos={videos}
                          onCartClick={(item) => this.onCartClick(item)}
                          onFavClick={() => this.onFavClick()}/>
         )}/>
+
+        {/* Cart page */}
         <Route path='/cart' render={() => (
           <CartComponent items={cartItems}
                          onCartClick={(item) => this.onCartClick(item)}
                          updateNavItem={(item) => this.updateNavItem(item)}/>
         )}/>
-        <Route path='/sign-in' render={() => (
-          <SignInComponent/>
-        )}/>
-        <Route path='/sign-up' render={() => (
-          <SignUpComponent/>
-        )}/>
 
-        <ToastContainer hideProgressBar={true} newestOnTop={true} autoClose={4000} position={"bottom-left"}/>
+        {/* Sign-in page */}
+        <Route path='/sign-in' component={SignInComponent}/>
+
+        {/* Sign-up page */}
+        <Route path='/sign-up' component={SignUpComponent}/>
+
+        {/* Add to cart modal */}
+        {currentItem && <CartModalPage item={currentItem} onClose={() => this.onCloseCartModal()}
+                                       onCartUpdate={(item, quantity) => this.onCartUpdate(item, quantity)}/>}
+
+        {/* Add to favorites modal */}
+        {showFavNoti && <FavModalPage onClose={() => this.onCloseFavNotiModal()}/>}
+
+        {/* Toast successful message when adding items to cart*/}
+        <ToastContainer hideProgressBar={true}
+                        newestOnTop={true}
+                        autoClose={4000}
+                        position={"bottom-left"}/>
       </div>
     );
   }

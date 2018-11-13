@@ -1,44 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The Pirate Shop
+This project was submitted for a coding challenge.
 
-## Available Scripts
+Time spent: 12 hours
 
-In the project directory, you can run:
+## How The App Works
+Built with React, the app is a pirate ecommerce site which displays 6 Star Wars discs:
+* Star Wars Episode IV DVD ($20)
+* Star Wars Episode V DVD ($20)
+* Star Wars Episode VI DVD ($20)
+* Star Wars Episode IV Blu-Ray ($25)
+* Star Wars Episode V Blu-Ray ($25)
+* Star Wars Episode VI Blu-Ray ($25)
 
-### `npm start`
+Users can add discs to cart and edit their cart. Appropriate discounts will be applied automatically to their cart.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Assumptions: 
+* We only have 6 kinds of discs: 3 DVDs and 3 Blu-rays.
+* An unlimited number of discs are in stock (or at least users can add as many items as they want)
+* Discount rules are set on the client side, not the server site. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Live Demo on [Github Page](https://minhkhang1795.github.io/the-pirate-shop/)
 
-### `npm test`
+## To run the app locally
+Install [Create React App](https://github.com/facebook/create-react-app) to begin building apps with React!
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then, clone the app or download the app as a zip file (currently private due to the open coding challenge)
+```
+git clone https://github.com/minhkhang1795/the-pirate-shop.git
+cd the-pirate-shop
+```
+Next, install all project dependencies with
+```
+npm install
+```
 
-### `npm run build`
+Finally, start the development server with
+```
+npm start
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Note: the service worker is included in the production build.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Implemented functionalities
+* [x] Interface Design:
+  * [x] Responsiveness: All application components render on-screen in a responsive manner.
+  * [x] Usability: All application components are usable across modern desktop, tablet, and phone browsers.
+* [x] Application Functionality:
+  * [x] List View: a list card view of Star Wars videos is shown at start.
+  * [x] User can change the quantity of an item or remove an item from the cart. The change will reflect clearly and immediately on the UI.
+  * [x] Discounts for DVDs and Blu-rays are automatically applied to cart.
+  * [x] Discount for a bulk order is also automatically applied.
+  * [x] Cart page clearly indicates the discounts, subtotals and total.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Future steps
+* Persist data in local storage.
+* Enhance accessibility.
+* Create detail page for videos.
+* Allow users to add videos to favorite list (local storage).
+* Handle errors when the app cannot fetch data from the server.
+* Improve UI/UX to make it look more like an E-commerce site.
+* Have more items and allow user to search for/filter/sort items based on some criteria (title, director, category, etc).
+  
+    
+## Credits
+* [MDBootstrap](https://mdbootstrap.com)
+* [Udacity/reactnd-contacts-complete](https://github.com/minhkhang1795/reactnd-contacts-complete)
+* [Open Movie Database](http://www.omdbapi.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## MIT License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Copyright 2018 Minh-Khang Vu
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    Permission is hereby granted, free of charge, to any person obtaining a copy 
+    of this software and associated documentation files (the "Software"), to deal 
+    in the Software without restriction, including without limitation the rights 
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+    of the Software, and to permit persons to whom the Software is furnished to do 
+    so, subject to the following conditions:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    The above copyright notice and this permission notice shall be included in all 
+    copies or substantial portions of the Software.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS 
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR 
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER 
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION 
+    WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

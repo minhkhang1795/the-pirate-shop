@@ -66,12 +66,8 @@ class App extends Component {
     this.setState({cartItems: cartItems, currentItem: null});
   }
 
-  onFavClick() {
-    this.setState({showFavNoti: true});
-  }
-
-  onCloseFavNotiModal() {
-    this.setState({showFavNoti: false});
+  showFavNoti(shouldShow) {
+    this.setState({showFavNoti: shouldShow});
   }
 
   updateNavItem(item) {
@@ -103,7 +99,7 @@ class App extends Component {
         <Route exact path={process.env.PUBLIC_URL + '/'} render={() => (
           <ShopComponent videos={videos}
                          onCartClick={(item) => this.onCartClick(item)}
-                         onFavClick={() => this.onFavClick()}/>
+                         onFavClick={() => this.showFavNoti(true)}/>
         )}/>
 
         {/* Cart page */}
@@ -124,7 +120,7 @@ class App extends Component {
                                        onCartUpdate={(item, quantity) => this.onCartUpdate(item, quantity)}/>}
 
         {/* Add to favorites modal */}
-        {showFavNoti && <FavModalPage onClose={() => this.onCloseFavNotiModal()}/>}
+        {showFavNoti && <FavModalPage onClose={() => this.showFavNoti(false)}/>}
 
         {/* Toast successful message when adding items to cart*/}
         <ToastContainer hideProgressBar={true}

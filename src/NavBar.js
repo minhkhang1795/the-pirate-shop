@@ -34,7 +34,7 @@ class NavbarFeatures extends React.Component {
     const {activeItem, itemsCount} = this.props;
     return (
       <Navbar color="unique-color-dark" dark expand="md" fixed="top" scrolling>
-        <NavbarBrand href="/">
+        <NavbarBrand href={process.env.PUBLIC_URL + '/'}>
           <strong>The Pirate Shop</strong>
         </NavbarBrand>
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick}/>}

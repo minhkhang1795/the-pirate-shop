@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/the-pirate-shop/precache-manifest.94d5a4dfe09930a2a783e2f0abe9cc55.js"
+  "/the-pirate-shop/precache-manifest.a29687c53f2c1d639269394bc97e8ff6.js"
 );
 
 workbox.clientsClaim();

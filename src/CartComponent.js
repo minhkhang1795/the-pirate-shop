@@ -65,7 +65,7 @@ class CartComponent extends React.Component {
     let {discountApplied, total} = CartComponent.calculateTotal(items);
 
     return (
-      <Container>
+      <Container className="my-5 py-5">
         <section className="text-center my-5 py-5">
           <h2 className="h1-responsive font-weight-bold text-center my-3">Your Cart</h2>
 

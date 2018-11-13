@@ -1,17 +1,17 @@
 {
-  "main.css": "/the-pirate-shop/static/css/main.5d050c24.chunk.css",
-  "main.js": "/the-pirate-shop/static/js/main.3acefd5e.chunk.js",
-  "main.js.map": "/the-pirate-shop/static/js/main.3acefd5e.chunk.js.map",
+  "main.css": "/the-pirate-shop/static/css/main.992d20f1.chunk.css",
+  "main.js": "/the-pirate-shop/static/js/main.cb1d37dc.chunk.js",
+  "main.js.map": "/the-pirate-shop/static/js/main.cb1d37dc.chunk.js.map",
   "static/css/1.18e584d9.chunk.css": "/the-pirate-shop/static/css/1.18e584d9.chunk.css",
   "static/js/1.ee89def8.chunk.js": "/the-pirate-shop/static/js/1.ee89def8.chunk.js",
   "static/js/1.ee89def8.chunk.js.map": "/the-pirate-shop/static/js/1.ee89def8.chunk.js.map",
   "runtime~main.js": "/the-pirate-shop/static/js/runtime~main.019a476c.js",
   "runtime~main.js.map": "/the-pirate-shop/static/js/runtime~main.019a476c.js.map",
   "static/media/mdb.css": "/the-pirate-shop/static/media/Roboto-Bold.e31fcf18.ttf",
-  "static/media/font-awesome.min.css": "/the-pirate-shop/static/media/fontawesome-webfont.674f50d2.eot",
-  "static/css/main.5d050c24.chunk.css.map": "/the-pirate-shop/static/css/main.5d050c24.chunk.css.map",
+  "static/media/font-awesome.min.css": "/the-pirate-shop/static/media/fontawesome-webfont.fee66e71.woff",
+  "static/css/main.992d20f1.chunk.css.map": "/the-pirate-shop/static/css/main.992d20f1.chunk.css.map",
   "static/css/1.18e584d9.chunk.css.map": "/the-pirate-shop/static/css/1.18e584d9.chunk.css.map",
   "index.html": "/the-pirate-shop/index.html",
-  "precache-manifest.e5236aa91ce024f4d9f40ad206f20941.js": "/the-pirate-shop/precache-manifest.e5236aa91ce024f4d9f40ad206f20941.js",
+  "precache-manifest.5d8cff550b8058457f277443bfcc68ac.js": "/the-pirate-shop/precache-manifest.5d8cff550b8058457f277443bfcc68ac.js",
   "service-worker.js": "/the-pirate-shop/service-worker.js"
 }

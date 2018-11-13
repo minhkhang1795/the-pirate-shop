@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "94998475f6aea65f558494802416c1cf",
-    "url": "/the-pirate-shop/static/media/Roboto-Thin.94998475.ttf"
+    "revision": "30799efa5bf74129468ad4e257551dc3",
+    "url": "/the-pirate-shop/static/media/Roboto-Regular.30799efa.eot"
   },
   {
-    "revision": "3acefd5e17f6d62c05a2",
-    "url": "/the-pirate-shop/static/css/main.5d050c24.chunk.css"
+    "revision": "cb1d37dcc73e366733ea",
+    "url": "/the-pirate-shop/static/css/main.992d20f1.chunk.css"
   },
   {
     "revision": "e31fcf1885e371e19f5786c2bdfeae1b",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/the-pirate-shop/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/the-pirate-shop/static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "/the-pirate-shop/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/the-pirate-shop/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
@@ -44,52 +44,52 @@ self.__precacheManifest = [
     "url": "/the-pirate-shop/static/media/Roboto-Thin.dfe56a87.eot"
   },
   {
-    "revision": "a990f611f2305dc12965f186c2ef2690",
-    "url": "/the-pirate-shop/static/media/Roboto-Light.a990f611.eot"
-  },
-  {
     "revision": "954bbdeb86483e4ffea00c4591530ece",
     "url": "/the-pirate-shop/static/media/Roboto-Thin.954bbdeb.woff2"
   },
   {
-    "revision": "69f8a0617ac472f78e45841323a3df9e",
-    "url": "/the-pirate-shop/static/media/Roboto-Light.69f8a061.woff2"
+    "revision": "a990f611f2305dc12965f186c2ef2690",
+    "url": "/the-pirate-shop/static/media/Roboto-Light.a990f611.eot"
   },
   {
     "revision": "7500519de3d82e33d1587f8042e2afcb",
     "url": "/the-pirate-shop/static/media/Roboto-Thin.7500519d.woff"
   },
   {
-    "revision": "30799efa5bf74129468ad4e257551dc3",
-    "url": "/the-pirate-shop/static/media/Roboto-Regular.30799efa.eot"
-  },
-  {
-    "revision": "3acefd5e17f6d62c05a2",
-    "url": "/the-pirate-shop/static/js/main.3acefd5e.chunk.js"
-  },
-  {
-    "revision": "2751ee43015f9884c3642f103b7f70c9",
-    "url": "/the-pirate-shop/static/media/Roboto-Regular.2751ee43.woff2"
-  },
-  {
-    "revision": "ba3dcd8903e3d0af5de7792777f8ae0d",
-    "url": "/the-pirate-shop/static/media/Roboto-Regular.ba3dcd89.woff"
+    "revision": "69f8a0617ac472f78e45841323a3df9e",
+    "url": "/the-pirate-shop/static/media/Roboto-Light.69f8a061.woff2"
   },
   {
     "revision": "3b813c2ae0d04909a33a18d792912ee7",
     "url": "/the-pirate-shop/static/media/Roboto-Light.3b813c2a.woff"
   },
   {
-    "revision": "4d9f3f9e5195e7b074bb63ba4ce42208",
-    "url": "/the-pirate-shop/static/media/Roboto-Medium.4d9f3f9e.eot"
+    "revision": "cb1d37dcc73e366733ea",
+    "url": "/the-pirate-shop/static/js/main.cb1d37dc.chunk.js"
+  },
+  {
+    "revision": "94998475f6aea65f558494802416c1cf",
+    "url": "/the-pirate-shop/static/media/Roboto-Thin.94998475.ttf"
   },
   {
     "revision": "46e48ce0628835f68a7369d0254e4283",
     "url": "/the-pirate-shop/static/media/Roboto-Light.46e48ce0.ttf"
   },
   {
-    "revision": "fc78759e93a6cac50458610e3d9d63a0",
-    "url": "/the-pirate-shop/static/media/Roboto-Medium.fc78759e.woff"
+    "revision": "2751ee43015f9884c3642f103b7f70c9",
+    "url": "/the-pirate-shop/static/media/Roboto-Regular.2751ee43.woff2"
+  },
+  {
+    "revision": "4d9f3f9e5195e7b074bb63ba4ce42208",
+    "url": "/the-pirate-shop/static/media/Roboto-Medium.4d9f3f9e.eot"
+  },
+  {
+    "revision": "ba3dcd8903e3d0af5de7792777f8ae0d",
+    "url": "/the-pirate-shop/static/media/Roboto-Regular.ba3dcd89.woff"
+  },
+  {
+    "revision": "df7b648ce5356ea1ebce435b3459fd60",
+    "url": "/the-pirate-shop/static/media/Roboto-Regular.df7b648c.ttf"
   },
   {
     "revision": "574fd0b50367f886d359e8264938fc37",
@@ -98,6 +98,10 @@ self.__precacheManifest = [
   {
     "revision": "ecdd509cadbf1ea78b8d2e31ec52328c",
     "url": "/the-pirate-shop/static/media/Roboto-Bold.ecdd509c.eot"
+  },
+  {
+    "revision": "fc78759e93a6cac50458610e3d9d63a0",
+    "url": "/the-pirate-shop/static/media/Roboto-Medium.fc78759e.woff"
   },
   {
     "revision": "39b2c3031be6b4ea96e2e3e95d307814",
@@ -116,10 +120,6 @@ self.__precacheManifest = [
     "url": "/the-pirate-shop/static/media/arrow_left.11911410.svg"
   },
   {
-    "revision": "df7b648ce5356ea1ebce435b3459fd60",
-    "url": "/the-pirate-shop/static/media/Roboto-Regular.df7b648c.ttf"
-  },
-  {
     "revision": "894a2ede85a483bf9bedefd4db45cdb9",
     "url": "/the-pirate-shop/static/media/Roboto-Medium.894a2ede.ttf"
   },
@@ -128,7 +128,7 @@ self.__precacheManifest = [
     "url": "/the-pirate-shop/static/css/1.18e584d9.chunk.css"
   },
   {
-    "revision": "d7e56a3bd18ff1431a295f3a4b62000d",
+    "revision": "d379674c464d9df4f2c0ad6702fef367",
     "url": "/the-pirate-shop/index.html"
   }
 ];

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from 'mdbreact';
+import {Container, Button} from 'mdbreact';
 import {Link} from "react-router-dom";
 
 const DVD_DISCOUNT = .1;
@@ -7,6 +7,14 @@ const BR_DISCOUNT = .15;
 const TOTAL_DISCOUNT = .05;
 
 class CartComponent extends React.Component {
+
+  static isEmpty(obj) {
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key))
+        return false;
+    }
+    return true;
+  }
 
   static calculateDiscount(minCount, items, cdType, discount) {
     let count = 0;
@@ -64,6 +72,11 @@ class CartComponent extends React.Component {
       <Container>
         <section className="text-center my-5 py-5">
           <h2 className="h1-responsive font-weight-bold text-center my-3">Your Cart</h2>
+
+          {(!items || CartComponent.isEmpty(items)) &&
+          <p className="grey-text text-center w-responsive mx-auto mb-3">Your cart is empty!</p>}
+
+          {items && !CartComponent.isEmpty(items) &&
           <table className="table table-hover">
             <thead className="black white-text">
             <tr>
@@ -83,7 +96,8 @@ class CartComponent extends React.Component {
                 <th scope="row">{index + 1}</th>
                 <td><b><Link to='/cart'>{items[key].Title + ' (' + items[key].cdType + ')'}</Link></b></td>
                 <td>${items[key].price}</td>
-                <td>{items[key].quantity}</td>
+                <td>{items[key].quantity} <i className="fa fa-edit fa-lg cursor"
+                                             onClick={() => this.props.onCartClick(items[key])}/></td>
                 <td data-toggle="tooltip" data-placement="bottom"
                     title={items[key].discount > 0 ? "Discount applied for order with all " + items[key].cdType + "s" : ""}>
                   {items[key].discount * 100}%
@@ -101,11 +115,17 @@ class CartComponent extends React.Component {
               <td><h3>Total</h3></td>
               <td data-toggle="tooltip" data-placement="bottom"
                   title={discountApplied ? "5% Discount applied for bulk order" : ""}>
-                <h3>${total}</h3></td>
+                <h3>${total}</h3>
+                <p className="green-text">{discountApplied ? "(5% Discount applied)" : ""}</p></td>
             </tr>
 
             </tbody>
           </table>
+          }
+          <Link to='/' onClick={() => this.props.updateNavItem('shop')}>
+            <Button color="dark">Continue Shopping</Button>
+          </Link>{' '}
+          {items && !CartComponent.isEmpty(items) && <Button color="green">Check out</Button>}
         </section>
       </Container>
     );

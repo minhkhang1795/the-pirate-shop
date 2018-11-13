@@ -52,8 +52,13 @@
 .react-numeric-input {
   margin-left: 1rem;
   margin-right: 1rem;
-  max-width: 250px!important;
+  margin-bottom: 1rem;
 }
+
+.react-numeric-input input {
+  width: 100%;
+}
+
 
 .cursor {
   cursor: pointer;

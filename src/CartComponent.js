@@ -119,7 +119,7 @@ class CartComponent extends React.Component {
           </table>
           }
 
-          <Link to='/' onClick={() => this.props.updateNavItem('')}>
+          <Link to={process.env.PUBLIC_URL + '/'} onClick={() => this.props.updateNavItem('')}>
             <Button color="dark">Continue Shopping</Button>
           </Link>{' '}
 

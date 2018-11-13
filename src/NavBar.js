@@ -43,11 +43,11 @@ class NavbarFeatures extends React.Component {
 
           <NavbarNav right>
             <NavItem active={activeItem === ''} onClick={() => this.props.updateNavItem('')}>
-              <NavLink to='/'>Shop</NavLink>
+              <NavLink to={process.env.PUBLIC_URL + '/'}>Shop</NavLink>
             </NavItem>
 
             <NavItem active={activeItem === 'cart'} onClick={() => this.props.updateNavItem('cart')}>
-              <NavLink to='/cart'>Cart
+              <NavLink to={process.env.PUBLIC_URL + '/cart'}>Cart
                 <span className="badge badge-danger ml-2">{itemsCount > 10 ? '10+' : itemsCount}
                 </span>
               </NavLink>
@@ -57,10 +57,10 @@ class NavbarFeatures extends React.Component {
               <Dropdown>
                 <DropdownToggle nav caret>Account</DropdownToggle>
                 <DropdownMenu>
-                  <Link className="my-dropdown" to='/sign-in' onClick={() => this.props.updateNavItem('sign-in')}>
+                  <Link className="my-dropdown" to={process.env.PUBLIC_URL + '/sign-in'} onClick={() => this.props.updateNavItem('sign-in')}>
                     <DropdownItem active={activeItem === 'sign-in'}>
                       Sign In</DropdownItem></Link>
-                  <Link className="my-dropdown" to='/sign-up' onClick={() => this.props.updateNavItem('sign-up')}>
+                  <Link className="my-dropdown" to={process.env.PUBLIC_URL + '/sign-up'} onClick={() => this.props.updateNavItem('sign-up')}>
                     <DropdownItem active={activeItem === 'sign-up'}>
                       Create an Account</DropdownItem></Link>
                 </DropdownMenu>

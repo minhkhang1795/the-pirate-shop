@@ -1,8 +1,10 @@
 {
+  "homepage": "https://minhkhang1795.github.io/the-pirate-shop/",
   "name": "the-pirate-shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "mdbreact": "^4.8.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
@@ -13,8 +15,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

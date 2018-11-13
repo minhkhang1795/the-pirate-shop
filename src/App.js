@@ -21,7 +21,7 @@ class App extends Component {
     cartItems: {},
     currentItem: null,
     showFavNoti: false,
-    navItem: window.location.pathname.replace('/', '')
+    navItem: window.location.pathname.replace(process.env.PUBLIC_URL + '/', '')
   };
 
   componentDidMount() {
@@ -100,24 +100,24 @@ class App extends Component {
                 itemsCount={App.itemsCount(cartItems)}/>
 
         {/* Main shopping page */}
-        <Route exact path='/' render={() => (
+        <Route exact path={process.env.PUBLIC_URL + '/'} render={() => (
           <ShopComponent videos={videos}
                          onCartClick={(item) => this.onCartClick(item)}
                          onFavClick={() => this.onFavClick()}/>
         )}/>
 
         {/* Cart page */}
-        <Route path='/cart' render={() => (
+        <Route path={process.env.PUBLIC_URL + '/cart'} render={() => (
           <CartComponent items={cartItems}
                          onCartClick={(item) => this.onCartClick(item)}
                          updateNavItem={(item) => this.updateNavItem(item)}/>
         )}/>
 
         {/* Sign-in page */}
-        <Route path='/sign-in' component={SignInComponent}/>
+        <Route path={process.env.PUBLIC_URL + '/sign-in'} component={SignInComponent}/>
 
         {/* Sign-up page */}
-        <Route path='/sign-up' component={SignUpComponent}/>
+        <Route path={process.env.PUBLIC_URL + '/sign-up'} component={SignUpComponent}/>
 
         {/* Add to cart modal */}
         {currentItem && <CartModalPage item={currentItem} onClose={() => this.onCloseCartModal()}

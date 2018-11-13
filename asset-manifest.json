@@ -1,7 +1,7 @@
 {
   "main.css": "/the-pirate-shop/static/css/main.b11af389.chunk.css",
-  "main.js": "/the-pirate-shop/static/js/main.816dbb19.chunk.js",
-  "main.js.map": "/the-pirate-shop/static/js/main.816dbb19.chunk.js.map",
+  "main.js": "/the-pirate-shop/static/js/main.e279d7c8.chunk.js",
+  "main.js.map": "/the-pirate-shop/static/js/main.e279d7c8.chunk.js.map",
   "static/css/1.18e584d9.chunk.css": "/the-pirate-shop/static/css/1.18e584d9.chunk.css",
   "static/js/1.ee89def8.chunk.js": "/the-pirate-shop/static/js/1.ee89def8.chunk.js",
   "static/js/1.ee89def8.chunk.js.map": "/the-pirate-shop/static/js/1.ee89def8.chunk.js.map",
@@ -12,6 +12,6 @@
   "static/css/main.b11af389.chunk.css.map": "/the-pirate-shop/static/css/main.b11af389.chunk.css.map",
   "static/css/1.18e584d9.chunk.css.map": "/the-pirate-shop/static/css/1.18e584d9.chunk.css.map",
   "index.html": "/the-pirate-shop/index.html",
-  "precache-manifest.23462c1b67ce0b239ff35dbdca7eed60.js": "/the-pirate-shop/precache-manifest.23462c1b67ce0b239ff35dbdca7eed60.js",
+  "precache-manifest.fb6055385cd10d50e41cbf2a9e369958.js": "/the-pirate-shop/precache-manifest.fb6055385cd10d50e41cbf2a9e369958.js",
   "service-worker.js": "/the-pirate-shop/service-worker.js"
 }

@@ -31,6 +31,7 @@ class NavbarFeatures extends React.Component {
   }
 
   render() {
+    const {activeItem, itemsCount} = this.props;
     return (
       <Navbar color="unique-color-dark" dark expand="md" fixed="top" scrolling>
         <NavbarBrand href="/">
@@ -41,12 +42,15 @@ class NavbarFeatures extends React.Component {
         <Collapse isOpen={this.state.collapse} navbar>
 
           <NavbarNav right>
-            <NavItem active={this.props.activeItem === 'shop'} onClick={() => this.props.updateNavItem('shop')}>
+            <NavItem active={activeItem === 'shop'} onClick={() => this.props.updateNavItem('shop')}>
               <NavLink to='/'>Shop</NavLink>
             </NavItem>
 
-            <NavItem active={this.props.activeItem === 'cart'} onClick={() => this.props.updateNavItem('cart')}>
-              <NavLink to='/cart'>Cart</NavLink>
+            <NavItem active={activeItem === 'cart'} onClick={() => this.props.updateNavItem('cart')}>
+              <NavLink to='/cart'>Cart
+                <span className="badge badge-danger ml-2">{itemsCount > 10 ? '10+' : itemsCount}
+                </span>
+              </NavLink>
             </NavItem>
 
             <NavItem>
@@ -54,10 +58,10 @@ class NavbarFeatures extends React.Component {
                 <DropdownToggle nav caret>Account</DropdownToggle>
                 <DropdownMenu>
                   <Link className="my-dropdown" to='/sign-in' onClick={() => this.props.updateNavItem('signin')}>
-                    <DropdownItem active={this.props.activeItem === 'signin'}>
+                    <DropdownItem active={activeItem === 'signin'}>
                       Sign In</DropdownItem></Link>
                   <Link className="my-dropdown" to='/sign-up' onClick={() => this.props.updateNavItem('signup')}>
-                    <DropdownItem active={this.props.activeItem === 'signup'}>
+                    <DropdownItem active={activeItem === 'signup'}>
                       Create an Account</DropdownItem></Link>
                 </DropdownMenu>
               </Dropdown>

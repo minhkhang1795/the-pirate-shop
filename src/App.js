@@ -12,6 +12,7 @@ import ShopComponent from "./ShopComponent";
 import CartComponent from "./CartComponent";
 import SignInComponent from "./SignInComponent";
 import SignUpComponent from "./SignUpComponent";
+import {ToastContainer, toast} from "mdbreact";
 
 class App extends Component {
 
@@ -51,15 +52,6 @@ class App extends Component {
     this.setState({currentItem: null});
   }
 
-
-  onFavClick() {
-    this.setState({showFavNoti: true});
-  }
-
-  onCloseFavNotiModal() {
-    this.setState({showFavNoti: false});
-  }
-
   onCartUpdate(item, quantity) {
     let cartItems = this.state.cartItems;
     let id = item.id;
@@ -74,18 +66,41 @@ class App extends Component {
         cartItems[item.id] = item;
       }
     }
+    toast.success('Your cart has been updated.');
     this.setState({cartItems: cartItems, currentItem: null});
+  }
+
+  onFavClick() {
+    this.setState({showFavNoti: true});
+  }
+
+  onCloseFavNotiModal() {
+    this.setState({showFavNoti: false});
   }
 
   updateNavItem(item) {
     this.setState({navItem: item});
   }
 
+  static itemsCount(items) {
+    let count = 0;
+    if (items) {
+      for (let key in items) {
+        if (items.hasOwnProperty(key)) {
+          count += items[key].quantity;
+        }
+      }
+    }
+    return count;
+  }
+
   render() {
     const {videos, cartItems, currentItem, showFavNoti, navItem} = this.state;
     return (
       <div>
-        <NavBar activeItem={navItem} updateNavItem={(item) => this.updateNavItem(item)}/>
+        <NavBar activeItem={navItem}
+                updateNavItem={(item) => this.updateNavItem(item)}
+                itemsCount={App.itemsCount(cartItems)}/>
         {currentItem && <CartModalPage item={currentItem} onClose={() => this.onCloseCartModal()}
                                        onCartUpdate={(item, quantity) => this.onCartUpdate(item, quantity)}/>}
         {showFavNoti && <FavModalPage onClose={() => this.onCloseFavNotiModal()}/>}
@@ -105,6 +120,8 @@ class App extends Component {
         <Route path='/sign-up' render={() => (
           <SignUpComponent/>
         )}/>
+
+        <ToastContainer hideProgressBar={true} newestOnTop={true} autoClose={4000} position={"bottom-left"}/>
       </div>
     );
   }
